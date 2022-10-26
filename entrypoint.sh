@@ -28,7 +28,7 @@ INSERT INTO solezonsolis.users (username, password) VALUES ('alicia', '\$2b\$12\
 INSERT INTO solezonsolis.users (username, password) VALUES ('sue', '\$2b\$12\$T.owvG2dG79XTIvQvh/3nO4Ow4WA7hQxKumVpQAHRHP42XVYrtXYC');
 
 CREATE USER 'user'@'localhost' IDENTIFIED BY 'Gr33n73@mC4nG0D1e>:(';
-GRANT SELECT, INSERT, UPDATE ON horror_feeds.users TO 'user'@'localhost';
+GRANT SELECT, INSERT, UPDATE ON solezonsolis.users TO 'user'@'localhost';
 
 FLUSH PRIVILEGES;
 EOF

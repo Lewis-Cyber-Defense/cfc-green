@@ -13,6 +13,14 @@ def index():
 def sign_in():
     return render_template('login.html')
 
+@web.route('/contact')
+def sign_in():
+    return render_template('contact.html')
+
+@web.route('/solar')
+def sign_in():
+    return render_template('solar.html')
+
 @web.route('/dashboard')
 @is_authenticated
 def dashboard():

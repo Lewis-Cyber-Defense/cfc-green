@@ -29,14 +29,14 @@ def login(username, password):
         return False
 
 def register(username, password):
-    exists = query_db('SELECT * FROM users WHERE username = %s', (username,))
+    exists = query_db('SELECT * FROM users WHERE username = %s', (username,), one=True)
    
     if exists:
         return False
     
     hashed = generate_password_hash(password)
 
-    query_db(f'INSERT INTO users (username, password) VALUES ("{username}", "{hashed}")')
+    query_db(f'INSERT INTO users (username, password) VALUES ("{username}", "{hashed}")', one=True)
     mysql.connection.commit()
 
     return True
