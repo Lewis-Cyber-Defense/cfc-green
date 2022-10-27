@@ -10,16 +10,20 @@ def index():
     return render_template('index.html')
 
 @web.route('/login')
-def sign_in():
+def web_login():
     return render_template('login.html')
 
 @web.route('/contact')
-def sign_in():
+def web_contact():
     return render_template('contact.html')
 
 @web.route('/solar')
-def sign_in():
+def web_solar():
     return render_template('solar.html')
+
+@web.route('/manufacturing')
+def web_manufacturing():
+    return render_template('manufacturing.html')
 
 @web.route('/dashboard')
 @is_authenticated
@@ -52,6 +56,7 @@ def api_login():
         
     return response('Invalid credentials!'), 403
 
+"""
 @api.route('/register', methods=['POST'])
 def api_register():
     if not request.is_json:
@@ -70,3 +75,4 @@ def api_register():
         return response('User registered! Please login')
     
     return response('User exists already!'), 409
+"""
