@@ -31,7 +31,7 @@ body {
 /* Smallest ViewPort [640,480] */
 .midSection {
     position: absolute;
-    background-color: lightblue;
+    background-color: lightgreen;
     justify-content: center;
     width: 80vw;
     height: 70vh;
@@ -39,11 +39,29 @@ body {
     margin-right: 10vw;
     margin-top: 5vh;
     margin-bottom: 7vh;
-
 }
 
-.loginSection {
+#loginSection {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(141, 141, 141);
+    width: 60%;
+    height: 50%;
+    margin: auto;
+    top: 25%;
+    border-radius: 5px solid rgb(255, 255, 255);
+}
 
+#loginLabel {
+    font-size: xx-large;
+    text-align: center;
+}
+
+.loginField {
+    justify-content: center;
+    margin:auto;
+    text-align: center;
 }
 
 .centeredBox {
