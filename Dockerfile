@@ -22,7 +22,7 @@ COPY src .
 COPY config/supervisord.conf /etc/supervisord.conf
 
 # Expose port the server is reachable on
-EXPOSE 1337
+EXPOSE 80
 
 # Disable pycache
 ENV PYTHONDONTWRITEBYTECODE=1
