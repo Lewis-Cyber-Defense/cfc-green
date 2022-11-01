@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/contact.css">
 
     <title>Contact Us</title>
   </head>
@@ -24,24 +25,32 @@
       </ul>
     </div>
 
-    <div>
+    <div class="midSection">
 
-      <div>
-        <p>Contact<br>Information</p>
-        <p>Welcome to SoleZonSolis Energy, we are happy to answer any questions you might have about our services. Please fill out the contact us form and we will get back to you shortly!</p>
-        <p>Phone Number</p>
-        <p>Email Address</p>
+      <div id="contactInformationSection">
+        <p id="contactInfoLabel">Contact<br>Information</p>
+        <p id="contactInfoDescription">Welcome to SoleZonSolis Energy, we are happy to answer any questions you might have about our services. Please fill out the contact us form and we will get back to you shortly!</p>
+        <p id="contactInfoPhoneNumber">Phone Number<br>778-330-2389</p>
+        <p id="contactInfoEmail">Email Address<br>test@test.com</p>
       </div>
 
-      <div>
-        <form>
-          Contact Us Form
-          <input type="text">Name</input>
-          <input type="email"></input>
-          <input type="text"></input>
+      <div id="contactFormSection">
+
+        <p id="contactFormLabel">Contact Us Form</p>
+        <form id="contactForm">
+          <p class="contactLabel">Name</p>
+          <input type="text" id="contactName" name="contactName" required/>
+          <p class="contactLabel">Email Address</p>
+          <input type="email" id="contactEmail" name="contactEmail" required/>
+          <p class="contactLabel">Phone Number</p>
+          <input type="text" id="contactPhoneNumber" name="contactPhoneNumber" required/>
+          <p class="contactLabel">File Upload</p>
+          <input type="file" id="contactFile" name="contactFile"/>
           <!--FILE UPLOAD    >:(   UGH WHY!!! -->
-          <input type="Submit"></input>
+          <p class="contactLabel"></p>
+          <input type="submit" id="contactSubmit" value="Submit"/>
         </form>
+
       </div>
 
     </div>

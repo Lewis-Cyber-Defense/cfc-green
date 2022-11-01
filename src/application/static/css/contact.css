@@ -1,0 +1,73 @@
+.midSection {
+    display: flex;
+    position: fixed;
+    width: 80%;
+    height: 75%;
+    background-color: darkgreen;
+    font-family: sans-serif;
+}
+
+/* CONTACT INFORMATION (Left Side) */
+#contactInformationSection {
+    width: 44%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    margin-top: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 5%;
+    border-radius: 30px 30px 30px 30px;
+    flex-direction: column;
+}
+
+#contactInfoLabel {
+    padding-top: 5%;
+    font-weight: bold;
+}
+
+#contactInfoDescription {
+    padding-top: 20%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 20%;
+}
+
+#contactInfoPhoneNumber {
+    padding-bottom: 5%;
+}
+
+#contactInfoEmail {
+    padding-bottom: 5%;
+}
+
+/* CONTACT FORM (Right Side) */
+#contactFormSection {
+    width: 44%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    margin-top: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 5%;
+    border-radius: 30px 30px 30px 30px;
+    flex-direction: column;
+}
+
+.contactLabel{
+    margin-top: 30px;
+}
+
+#contactFormLabel {
+    font-weight: bold;
+}
+
+input[type=file] { 
+    max-width: 70%;
+    padding: 2%;
+    border-radius: 5px;
+    border: 1px solid rgb(0, 0, 0);
+  }
