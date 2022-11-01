@@ -1,0 +1,31 @@
+.midSection {
+    display: flex;
+    position: fixed;
+    width: 80%;
+    height: 75%;
+    background-color: darkgreen;
+    font-family: sans-serif;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.textRegion {
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    border-radius: 30px 30px 30px 30px;
+}
+
+.textRegionLabel {
+    font-weight: bold;
+    padding: 10%;
+}
+
+.textRegionDescription {
+    padding-left: 10%;
+    padding-right: 10%;
+}
