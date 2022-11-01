@@ -41,39 +41,6 @@ body {
     margin-bottom: 7vh;
 }
 
-#loginSection {
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(141, 141, 141);
-    width: 60%;
-    height: 50%;
-    margin: auto;
-    top: 25%;
-    border-radius: 5px solid rgb(255, 255, 255);
-}
-
-#loginLabel {
-    font-size: xx-large;
-    text-align: center;
-}
-
-.loginField {
-    justify-content: center;
-    margin:auto;
-    text-align: center;
-}
-
-.centeredBox {
-    margin: auto;
-    border: 5px black;
-    width: 50%;
-    height: 40%;
-    text-align: center;
-    display: block;
-    background-color: rgba(87, 83, 83, 0.288);
-}
-
 li {
     left: 200px;
     display: inline;

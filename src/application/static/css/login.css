@@ -1,0 +1,50 @@
+.midSection {
+    display: flex;
+    position: fixed;
+    width: 80vw;
+    height: 75vh;
+    background-color: darkgreen;
+    font-family: sans-serif;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 3.625vh;
+    margin-left: 10vw;
+}
+
+#loginSection {
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 40%;
+    height: 60%;
+    margin: auto;
+    border-radius: 45px 45px 45px 45px;
+    font-family: sans-serif;
+}
+
+#loginForm {
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20%;
+}
+
+.loginFieldLabel {
+}
+
+
+#loginLabel {
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.loginField {
+    justify-content: center;
+    margin:auto;
+    text-align: center;
+    padding-bottom: 5%;
+}
