@@ -13,6 +13,7 @@ def index():
 def web_login():
     return render_template('login.html')
 
+# Begin static pages
 @web.route('/contact')
 def web_contact():
     return render_template('contact.html')
@@ -25,11 +26,16 @@ def web_solar():
 def web_manufacturing():
     return render_template('manufacturing.html')
 
+# Authenticated stuff
 @web.route('/dashboard')
 @is_authenticated
 def dashboard():
     current_user = token_verify(session.get('auth'))
-    return render_template('dashboard.html', user=current_user.get('username'))
+    if current_user.get('username') == "plank":
+        return render_template('dashboard.html', user=current_user.get('username'))
+    else:
+        return render_template('dashboard-user.html', user=current_user.get('username'))
+
 
 @web.route('/logout')
 def logout():
