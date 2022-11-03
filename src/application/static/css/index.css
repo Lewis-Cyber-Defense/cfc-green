@@ -1,0 +1,93 @@
+#solarPanelSection {
+    position: fixed;
+    top: 10vh;
+    width: 40%;
+    height: 32vh;
+    left: 30%;
+    /* background-color: aqua; */
+    background-image: url(../images/solarpanels.jpg);
+    background-size: cover;
+}
+
+#bottomIndexSection {
+    display: flex;
+    position: relative;
+    width: 80%;
+    height: 35vh;
+    /* background-color: white; */
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+    left: 10%;
+    border: 1px solid black;
+    top: 45vh;
+}
+
+#topBottomSection {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 20%;
+    /* background-color: red; */
+    text-align: center;
+    justify-content: center;
+}
+
+#bottomSectionLabel {
+    position: relative;
+    align-self: center;
+    padding: auto;
+    margin: auto;
+}
+
+#bottomBottomSection {
+    display: flex;
+    position: relative;
+    /* background-color: blue; */
+    width: 100%;
+    height: 80%;
+
+}
+
+#solarArraySection {
+    display: flex;
+    position: relative;
+    width: 30%;
+    height: 60%;
+    background-color: lightblue;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 15%;
+    justify-content: center;
+    text-align: center;
+}
+
+#solarArrayLabel {
+    align-self: center;
+    padding: auto;
+    margin: auto;
+    color: black;
+}
+
+#powerGeneration {
+    display: flex;
+    position: relative;
+    width: 30%;
+    height: 60%;
+    background-color: lightblue;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 15%;
+    justify-content: center;
+    text-align: center;
+}
+
+#powerGenerationLabel {
+    align-self: center;
+    padding: auto;
+    margin: auto;
+    color: black;
+}
