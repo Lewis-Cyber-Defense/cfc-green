@@ -9,7 +9,7 @@ body {
     padding: 0;
     list-style-type: none;
     background-color: rgb(37, 31, 31);
-    left: 200px;
+    /* left: 200px; */
     display: flex;
     justify-content: center;
 }
@@ -30,18 +30,18 @@ body {
 
 /* Smallest ViewPort [640,480] */
 .midSection {
-    position: absolute;
+    position: fixed;
     background-color: lightgreen;
     justify-content: center;
     width: 80vw;
     height: 70vh;
     margin-left: 10vw;
     margin-right: 10vw;
-    margin-top: 5vh;
+    margin-top: 10vh;
     margin-bottom: 7vh;
 }
 
-li {
+/* li {
     left: 200px;
     display: inline;
     padding: 10px;
@@ -55,4 +55,4 @@ li a {
     float: center;
     text-decoration: none;
     color: white;
-}
+} */
