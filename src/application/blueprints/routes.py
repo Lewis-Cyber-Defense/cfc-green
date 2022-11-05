@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, session, current_app, redirect
 from application.database import login, register
 from application.util import response, is_authenticated, token_verify
-
+import os
 web = Blueprint('web', __name__)
 api = Blueprint('api', __name__)
 
@@ -30,9 +30,25 @@ def web_manufacturing():
 @web.route('/dashboard')
 @is_authenticated
 def dashboard():
+    def make_tree(path):
+        tree = dict(name=os.path.basename(path), children=[])
+        try: lst = os.listdir(path)
+        except OSError:
+            pass #ignore errors
+        else:
+            for name in lst:
+                fn = os.path.join(path, name)
+                if os.path.isdir(fn):
+                    tree['children'].append(make_tree(fn))
+                else:
+                    with open(fn, 'rb') as f:
+                        contents = f.read()
+                    tree['children'].append(dict(name=name, contents=contents))
+        return tree
+
     current_user = token_verify(session.get('auth'))
     if current_user.get('username') == "plank":
-        return render_template('dashboard.html', user=current_user.get('username'))
+        return render_template('dashboard.html', user=current_user.get('username'), tree=make_tree('application/static/uploads'))
     else:
         return render_template('dashboard-user.html', user=current_user.get('username'))
 
@@ -40,6 +56,12 @@ def dashboard():
 def logout():
     session['auth'] = None
     return redirect('/')
+
+@api.route('/upload', methods=['POST'])
+def upload():
+    myfile = request.files['file']
+    myfile.save('/app/application/uploads/'+myfile.filename)
+    return response('Done!'), 200
 
 @api.route('/login', methods=['POST'])
 def api_login():

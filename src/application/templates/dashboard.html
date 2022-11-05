@@ -71,24 +71,14 @@
         <div id="FTPSection">
           <h2>FTP Server View</h2>
           <table id="FTPTable" name="FTPTable">
+            {%- for item in tree.children recursive %}
             <tr class="FTPEntry" name="FTPEntry">
-              <td class="FTPFile">File1</td>
+              <td class="FTPFile">{{ item.name }}</td>
               <td class="FTPDownload">
-                <button class="FTPDownloadButton">Download1</button>
+                <button class="FTPDownloadButton" onclick="location.href='/static/uploads/{{ item.name }}'">Download</button>
               </td>
             </tr>
-            <tr class="FTPEntry" name="FTPEntry">
-              <td class="FTPFile">File2</td>
-              <td class="FTPDownload">
-                <button class="FTPDownloadButton">Download2</button>
-              </td>
-            </tr>
-            <tr class="FTPEntry" name="FTPEntry">
-              <td class="FTPFile">File3</td>
-              <td class="FTPDownload">
-                <button class="FTPDownloadButton">Download3</button>
-              </td>
-            </tr>
+            {%- endfor %}
           </table>
         </div>
       </div>
