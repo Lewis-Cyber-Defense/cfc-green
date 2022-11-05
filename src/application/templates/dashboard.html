@@ -64,8 +64,6 @@
     </div>
 
     <br><br><br><br>
-    <h1 id="userHeader">Welcome, {{ user }}</h1>
-
     <div class="middleSection">
       <div id="topMidSection">
         <div id="FTPSection">
@@ -87,15 +85,11 @@
         <div id="EmailSection">
           <h2>Email View</h2>
           <table id="EmailTable" name="EmailTable">
+            {%- for item in emails %}
             <tr class="EmailEntry" name="EmailEntry">
-              <td class="Email">Email1</td>
+              <td class="Email">{{ item[0] }} New File Uploaded by {{ item[1] }} ({{ item[2] }})</td>
             </tr>
-            <tr class="EmailEntry" name="EmailEntry">
-              <td class="Email">Email2</td>
-            </tr>
-            <tr class="EmailEntry" name="EmailEntry">
-              <td class="Email">Email3</td>
-            </tr>
+            {%- endfor %}
           </table>
         </div>
       </div>

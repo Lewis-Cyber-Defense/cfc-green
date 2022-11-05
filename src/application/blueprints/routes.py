@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, session, current_app, redirect
 from application.database import login, register
 from application.util import response, is_authenticated, token_verify
+from datetime import datetime
 import os
 web = Blueprint('web', __name__)
 api = Blueprint('api', __name__)
@@ -48,7 +49,13 @@ def dashboard():
 
     current_user = token_verify(session.get('auth'))
     if current_user.get('username') == "plank":
-        return render_template('dashboard.html', user=current_user.get('username'), tree=make_tree('application/static/uploads'))
+        try:
+            with open('/app/application/emails.csv') as fd:
+                emails = [x.split(',') for x in fd.readlines()]
+        except Exception:
+            emails = [('12-12-1337', 'Ryan An00bRektn', 'an00b@notateamserver.xyz')]   
+
+        return render_template('dashboard.html', user=current_user.get('username'), tree=make_tree('application/static/uploads'), emails=emails)
     else:
         return render_template('dashboard-user.html', user=current_user.get('username'))
 
@@ -59,8 +66,9 @@ def logout():
 
 @api.route('/upload', methods=['POST'])
 def upload():
+    #myfile = request.get_json.get('body', '')
     myfile = request.files['file']
-    myfile.save('/app/application/uploads/'+myfile.filename)
+    myfile.save('/app/application/static/uploads/'+myfile.filename)
     return response('Done!'), 200
 
 @api.route('/login', methods=['POST'])
@@ -82,6 +90,26 @@ def api_login():
         return response('Success'), 200
         
     return response('Invalid credentials!'), 403
+
+@api.route('/contact', methods=['POST'])
+def api_contact():
+    if not request.is_json:
+        return response('Invalid JSON!'), 400
+    
+    data = request.get_json()
+    name = data.get('contactName', '').replace(',', ' ')
+    email = data.get('contactEmail', '').replace(',', ' ')
+    phone = data.get('contactPhone').replace(',', ' ')
+    
+    if not name or not email or not phone:
+        return response('All fields are required!'), 401
+    
+    with open('/app/application/emails.csv', 'a') as fd:
+        now = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+        fd.write(f"{now},{name},{email},{phone}\n")
+        return response('Success'), 200
+        
+    return response('Success'), 200
 
 """
 @api.route('/register', methods=['POST'])

@@ -1,11 +1,12 @@
 function toggleInputs(state) {
-	$("#username").prop("disabled", state);
-	$("#password").prop("disabled", state);
-	$("#login-btn").prop("disabled", state);
+	$("#contactName").prop("disabled", state);
+	$("#contactEmail").prop("disabled", state);
+	$("#contactPhoneNumber").prop("disabled", state);
+	$("#contactFile").prop("disabled", state);
 }
 
 
-async function auth(intent) {
+async function fakemail() {
 
 	toggleInputs(true);
 
@@ -13,22 +14,29 @@ async function auth(intent) {
 	card.attr("class", "alert alert-info");
 	card.hide();
 
-	let user = $("#username").val();
-	let pass = $("#password").val();
-	if ($.trim(user) === '' || $.trim(pass) === '') {
+	let name = $("#contactName").val();
+	let email = $("#contactEmail").val();
+	let phone = $("#contactPhoneNumber").val();
+
+	// https://stackoverflow.com/questions/5587973/javascript-upload-file
+	let file = document.getElementById("contactFile").files[0];
+	let formData = new FormData();
+
+	if ($.trim(name) === '' || $.trim(email) === '' || $.trim(phone) === '' || $.trim(file) === '') {
 		toggleInputs(false);
-		card.text("Please input email and password first!");
+		card.text("Please input all required fields first!");
 		card.attr("class", "alert alert-danger");
 		card.show();
 		return;
 	}
 
 	const data = {
-		username: user,
-		password: pass
+		contactName: name,
+		contactEmail: email,
+		contactPhone: phone
 	};
 
-	await fetch(`/api/${intent}`, {
+	await fetch(`/api/contact`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -40,7 +48,6 @@ async function auth(intent) {
 				card.attr("class", "alert alert-danger");
 				if (response.status == 200 && intent == "login") {
 					card.attr("class", "alert alert-success");
-					window.location.href = '/dashboard';
                     return;
 				}
 				else if(response.status == 200){
@@ -57,6 +64,14 @@ async function auth(intent) {
 			card.attr("class", "alert alert-danger");
 			card.show();
 		});
+
+	formData.append("file", file);
+	await fetch('/api/upload', {method: "POST", body: formData})
+	//	.catch((error) => {
+	//		card.text(error);
+	//		card.attr("class", "alert alert-danger");
+	//		card.show();
+	//	});
 
 	toggleInputs(false);
 }
