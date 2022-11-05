@@ -1,8 +1,8 @@
 #solarPanelSection {
-    position: fixed;
+    position: relative;
     top: 10vh;
     width: 40%;
-    height: 32vh;
+    height: 48vh;
     left: 30%;
     /* background-color: aqua; */
     background-image: url(../images/solarpanels.jpg);
@@ -13,7 +13,7 @@
     display: flex;
     position: relative;
     width: 80%;
-    height: 35vh;
+    height: 70vh;
     /* background-color: white; */
     flex-direction: column;
     align-self: center;
@@ -21,7 +21,7 @@
     text-align: center;
     left: 10%;
     border: 1px solid black;
-    top: 45vh;
+    top: 15vh;
 }
 
 #topBottomSection {
@@ -51,12 +51,10 @@
 }
 
 #solarArraySection {
-    display: flex;
     position: relative;
     width: 30%;
-    height: 60%;
+    height: 80%;
     background-color: lightblue;
-    margin-top: 5%;
     margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 15%;
@@ -72,12 +70,10 @@
 }
 
 #powerGeneration {
-    display: flex;
     position: relative;
     width: 30%;
     height: 60%;
     background-color: lightblue;
-    margin-top: 5%;
     margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 15%;

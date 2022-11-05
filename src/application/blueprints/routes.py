@@ -36,7 +36,6 @@ def dashboard():
     else:
         return render_template('dashboard-user.html', user=current_user.get('username'))
 
-
 @web.route('/logout')
 def logout():
     session['auth'] = None

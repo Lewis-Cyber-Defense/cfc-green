@@ -2,6 +2,7 @@ from colorama import Cursor
 from application.util import generate_password_hash, verify_hash, generate_token
 from flask_mysqldb import MySQL
 
+
 # TODO: Replace queries with prepared statments, there is SQL injection here from the HackTheBox challenge
 
 mysql = MySQL()
