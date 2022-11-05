@@ -65,14 +65,13 @@
 #solarArrayLabel {
     align-self: center;
     padding: auto;
-    margin: auto;
     color: black;
 }
 
 #powerGeneration {
     position: relative;
     width: 30%;
-    height: 60%;
+    height: 80%;
     background-color: lightblue;
     margin-left: 10%;
     margin-right: 10%;
@@ -84,6 +83,13 @@
 #powerGenerationLabel {
     align-self: center;
     padding: auto;
-    margin: auto;
     color: black;
+}
+
+#arraydata {
+    position: relative;
+    align-self: center;
+    text-align: center;
+    top: 20%;
+    margin-top: 10%;
 }
